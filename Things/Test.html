@@ -1,0 +1,278 @@
+<style>
+
+  /* @font-face {
+  font-family: "Roboto Mono", monospace;
+  src: url("fonts/RobotoMono-Regular.ttf");
+}
+@font-face {
+font-family: "Yantramanav Light";
+src: url('fonts/Yantramanav-Light.ttf');
+
+} */
+
+.row {
+  padding: 5px;
+}
+
+/* body{
+background-color: #edeff1;
+} */
+body, html {
+  background-color: #edeff1;
+
+  /*
+  $sans-shade: #333341;
+  $sans-primary: #4e4f5d;
+  $other-color: #8D939E;
+  $sans-tint: #B6BDC3;
+  $default-background: #edeff1;
+  $link-primary: #F17070;
+  $link-hover: #F65049;
+  */
+
+  h1{
+    font-family: Roboto Mono;
+    font-size: 64pt;
+    font-weight: medium;
+    color: #sans-primary;
+  }
+
+  h2{
+    font-family: Yantramanav;
+    font-size: 28pt;
+    font-weight: regular;
+    color: #sans-primary;
+  }
+
+  h3{
+    font-family: Yantramanav;
+    font-size: 20pt;
+    font-weight: regular;
+    color: #sans-primary;
+  }
+  h4{
+    font-family: yantramanav;
+    font-size: 16pt;
+    font-weight: regular;
+    color: #sans-secondary;
+  }
+
+  h5{
+    font-family: Roboto Mono;
+    font-size: 16pt;
+    font-weight: medium;
+    color: #sans-primary;
+  }
+  p{
+    font-family: Yantramanav;
+    font-size: 16pt;
+    font-weight: regular;
+    color: #sans-primary
+  }
+  a{
+    color: #F17070;
+  }
+
+  #draggable-card {
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 2px 53px 0 rgba(0,0,0,0.05);
+    width: 55%;
+    height: 85%;
+    border-radius: 4px;
+    cursor: move;
+    z-index: 10;
+    padding-left: 32px;
+    overflow-y: auto;
+  }
+
+  .image{
+    position: relative;
+    visibility: hidden;
+
+  }
+
+  .testbox{
+    width: 300px;
+    height: 300px;
+    background: blue;
+    margin: 30px;
+
+  }
+  .home-text{
+    width: 650px;
+    position: relative;
+    float: left;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* ------------PAGE TABS-------------------- */
+
+  /* .nav-block{
+  position: relative;
+  display: inline-block;
+  height: 32px;
+  max-width: 4px;
+  background-color: #F09898;
+  margin: 10px;
+  border-radius: 1px;
+} */
+
+.nav-item{
+  border-left-style: solid;
+  border-radius: 1px;
+  padding-left: 10px;
+  border-width: 4px;
+  border-color: #F17070;
+
+}
+
+
+</style>
+<html>
+<body>
+
+  <div class="nav-item">
+    <h5>Testing</h5>
+  </div>
+  <!-- Draggable DIV -->
+  <div id="draggable-card">
+    <h3>This is a small header</h3>
+    <h4> and this is a smaller description</h4>
+  </div>
+
+
+  <div class="testbox">
+    <img class="image" src="testimage.png"/>
+  </div>
+  <div class="testbox">
+    <img class="image" src="testimage2.png"/>
+  </div>
+  <div class="testbox">
+    <img class="image" src="testimage.png"/>
+  </div>
+  <div class="testbox">
+    <img class="image" src="testimage2.png"/>
+  </div>
+
+
+  <div class="home-text">
+    <p>
+      mega test text
+    </p>
+  </div>
+
+</body>
+</html>
+
+
+<!-- setInterval(function(){
+var $image = $("#image");
+if($sample.is(":hover")) {
+$("#image").css({left:e.pageX, top:e.pageY});
+}
+else {
+$(this "#image").hide();
+}
+}); -->
+
+<!-- $(document).mousemove(function(e){
+$("#image").css({left:e.pageX, top:e.pageY}); -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="{{ "/assets/js/night-mode.js" | relative_url }}"></script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+<script>
+  var testBox = document.getElementsByClassName("testbox"); //turns testbox css class into js variable
+  var  image = document.getElementsByClassName("image"); //turns .image css class into js variable
+  var testBoxLength = testBox.length; //creates an array of testboxes called testboxlenth
+
+  for (i = 0; i < testBoxLength; i++) { //for every testbox class in the HTML, add this function to it
+    var imageInTestBox = image[i]; //the increase in images is a variable called imageintestbox
+    testBox[i].addEventListener("mouseover", () => { //for every test box in the array, make the js function listen for a mouse hovering over it (???????)
+      console.log("called mouse over", imageInTestBox) //report to the console every time an image shoes in the test box
+      imageInTestBox.style.visibility = "visible"; //when theres a mouse in the box, make the image visible
+    })
+  }
+  for (i = 0; i < testBoxLength; i++) { //for every testbox class in HTML, add this function to it
+    var imageInTestBox = image[i]; //the increase in images is a variable called imageintestbox
+    testBox[i].addEventListener("mouseout", () => { //for every test box in the array, listen for when there isn't a mouse in the box. If true, do this
+    console.log("called mouse out", imageInTestBox)
+    imageInTestBox.style.visibility = "hidden"; //make the image hidden
+  })
+}
+
+//the ID of each image needs to be specific to the box is it a part of. for each array item, make that its ID
+
+// testBox.addEventListener("mouseover", () => {
+//   console.log("mouse over!")
+//
+//   image.style.visibility = "visible";
+// })
+// testBox.addEventListener("mouseout", () => {
+//   // console.log("mouse out!")
+//
+//   image.style.visibility = "hidden";
+// })
+
+// image.onMouseOver = function(){
+//   console.log("mouse over!")
+//   image.style.visibility = "hidden";
+// }
+
+image.onMouseOut = function(){
+  image.style.visibility = "visible";
+}
+</script>
+
+<script>
+  // Make the DIV element draggable:
+  dragElement(document.getElementById("draggable-card"));
+
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      // if present, the header is where you move the DIV from:
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      // otherwise, move the DIV from anywhere inside the DIV:
+      elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+      // stop moving when mouse button is released:
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+</script>
+</body>
+
+</html>
