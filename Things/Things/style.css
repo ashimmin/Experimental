@@ -1,0 +1,175 @@
+
+  /* @font-face {
+  font-family: "Roboto Mono", monospace;
+  src: url("fonts/RobotoMono-Regular.ttf");
+}
+@font-face {
+font-family: "Yantramanav Light";
+src: url('fonts/Yantramanav-Light.ttf');
+
+} */
+
+hmtl, body {
+  background-color: #edeff1 !important;
+margin: 0;
+height: 100%;
+overflow: hidden;
+}
+/*
+$sans-shade: #333341;
+$sans-primary: #4e4f5d;
+$other-color: #8D939E;
+$sans-tint: #B6BDC3;
+$default-background: #edeff1;
+$link-primary: #F17070;
+$link-hover: #F65049;
+*/
+
+/* #bgblur {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(10px);
+  background-color: red;
+  opacity: .5;
+} */
+
+h1{
+  font-family: Roboto Mono;
+  font-size: 64pt;
+  font-weight: medium;
+  color: #sans-primary;
+}
+
+h2{
+  font-family: Yantramanav;
+  font-size: 24pt;
+  font-weight: normal;
+  color: #sans-primary;
+}
+
+h3{
+  font-family: Yantramanav;
+  font-size: 16pt;
+  font-weight: normal;
+  color: #4e4f5d;
+}
+h4{
+  font-family: Roboto Mono;
+  font-size: 14pt;
+  font-weight: lighter;
+  color: #4E4F5D;
+}
+
+h5{
+  font-family: Yantramanav;
+  font-size: 14pt;
+  font-weight: Lighter;
+  color: #B6BDC3;
+
+}
+p{
+  font-family: Yantramanav;
+  font-size: 14pt;
+  font-weight: normal;
+  color: #4E4F5D;
+}
+a{
+  color: #F17070;
+}
+
+.draggablecard {
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 2px 53px 0 rgba(0,0,0,0.05);
+  width: 55%;
+  height: 85%;
+  border-radius: 4px;
+  cursor: move;
+  z-index: 10;
+  /* padding-left: 32px; */
+  padding: 48px;
+  overflow-y: auto;
+  filter: blur(0px);
+}
+
+.image{
+  position: relative;
+  visibility: hidden;
+
+}
+.title-component{
+  position: relative;
+  padding: 24px 0px 24px 0px;
+
+}
+.text-component{
+padding: 40px 0px 40px 0px;
+
+}
+
+
+.testbox{
+  width: 300px;
+  height: 300px;
+  background: blue;
+  margin: 30px;
+
+
+}
+.writing-alignment{
+  padding-top: 30%;
+
+
+}
+
+/* text that  goes behind all the cards */
+.home-text{
+  width: 650px;
+  position: absolute;
+  float: left;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ------------PAGE TABS-------------------- */
+
+/* .nav-block{
+position: relative;
+display: inline-block;
+height: 32px;
+max-width: 4px;
+background-color: #F09898;
+margin: 10px;
+border-radius: 1px;
+} */
+
+.navitem {
+  position: relative;
+  border-left-style: solid;
+  border-radius: 1px;
+  padding-left: 10px;
+  border-width: 4px;
+  border-color: #333341;
+  margin-left: 8px;
+  margin-top: 12px;
+  padding-top: 8px;
+  line-height: .8px;
+
+}
+
+#circle {
+  position: relative;
+width: 200px;
+height: 200px;
+background-color: red;
+}
+
+.square {
+  position: relative;
+width: 400px;
+height: 400px;
+background-color: blue;
+}
